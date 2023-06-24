@@ -34,33 +34,33 @@ inquirer
         },
 ])
     .then((data) => {
-      const answers = data;
+      // const answers = data;
 
-      if (answers === 'View All Departments') {
+      if (data === 'View All Departments') {
         viewDepartments();
       } 
 
-      if (answers === 'View All Roles') {
+      if (data === 'View All Roles') {
         viewRoles();
       }
 
-      if (answers === 'View All Employees') {
+      if (data === 'View All Employees') {
         viewEmployees();
       }
 
-      if (answers === 'Add A Department') {
+      if (data === 'Add A Department') {
         addDepartment();
       }
 
-      if (answers === 'Add A Role') {
+      if (data === 'Add A Role') {
         addRole();
       }
 
-      if (answers === 'Add An Employee') {
+      if (data === 'Add An Employee') {
         addEmployee();
       }
 
-      if (answers === 'Update An Employee Role') {
+      if (data === 'Update An Employee Role') {
         updateEmployee();
       }
   });
