@@ -9,12 +9,13 @@ const db = mysql.createConnection(
   {
     host: 'localhost',
     user: 'root',
-    password: 'process.en.DB_PASSWORD',
+    password: 'process.env.DB_PASSWORD',
     database: 'tracker_db'
   },
   console.log(`Connected to the tracker_db database.`)
 );
 
+// inquirer prompt with answer choices and callbacks
 inquirer
     .prompt([
         {
@@ -63,3 +64,12 @@ inquirer
         updateEmployee();
       }
   });
+
+
+viewDepartments = () => {};
+viewRoles = () => {};
+viewEmployees = () => {};
+addDepartment = () => {};
+addRole = () => {};
+addEmployee = () => {};
+updateEmployee = () => {};
