@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 
 require('dotenv').config();
 
-// Connect to database
+// connect to database
 const db = mysql.createConnection(
   {
     host: 'localhost',
@@ -14,3 +14,52 @@ const db = mysql.createConnection(
   },
   console.log(`Connected to the tracker_db database.`)
 );
+
+inquirer
+    .prompt([
+        {
+            type: 'list',
+            message: 'What would you like to do?',
+            name: 'Start',
+            choices: [
+                'View All Departments',
+                'View All Roles',
+                'View All Employees',
+                'Add A Department',
+                'Add A Role',
+                'Add An Employee',
+                'Update An Employee Role'
+            ]
+        },
+])
+    .then((data) => {
+      const answers = data;
+
+      if (answers === 'View All Departments') {
+        viewDepartments();
+      } 
+
+      if (answers === 'View All Roles') {
+        viewRoles();
+      }
+
+      if (answers === 'View All Employees') {
+        viewEmployees();
+      }
+
+      if (answers === 'Add A Department') {
+        addDepartment();
+      }
+
+      if (answers === 'Add A Role') {
+        addRole();
+      }
+
+      if (answers === 'Add An Employee') {
+        addEmployee();
+      }
+
+      if (answers === 'Update An Employee Role') {
+        updateEmployee();
+      }
+  });
