@@ -9,7 +9,7 @@ const db = mysql.createConnection(
   {
     host: 'localhost',
     user: 'root',
-    password: 'process.env.DB_PASSWORD',
+    password: process.env.DB_PASSWORD,
     database: 'tracker_db'
   },
   console.log(`Connected to the tracker_db database.`)
@@ -34,39 +34,43 @@ inquirer
         },
 ])
     .then((data) => {
-      // const answers = data;
+      const answers = data;
 
-      if (data === 'View All Departments') {
+      if (answers === 'View All Departments') {
         viewDepartments();
       } 
 
-      if (data === 'View All Roles') {
+      if (answers === 'View All Roles') {
         viewRoles();
       }
 
-      if (data === 'View All Employees') {
+      if (answers === 'View All Employees') {
         viewEmployees();
       }
 
-      if (data === 'Add A Department') {
+      if (answers === 'Add A Department') {
         addDepartment();
       }
 
-      if (data === 'Add A Role') {
+      if (answers === 'Add A Role') {
         addRole();
       }
 
-      if (data === 'Add An Employee') {
+      if (answers === 'Add An Employee') {
         addEmployee();
       }
 
-      if (data === 'Update An Employee Role') {
+      if (answers === 'Update An Employee Role') {
         updateEmployee();
       }
   });
 
 
-viewDepartments = () => {};
+viewDepartments = () => {
+    db.query('SELECT department.id AS id, department.name AS name FROM department', function (err, results) {
+      console.log(results);
+    })
+};
 viewRoles = () => {};
 viewEmployees = () => {};
 addDepartment = () => {};
