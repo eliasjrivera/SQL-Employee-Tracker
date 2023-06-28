@@ -88,9 +88,9 @@ const addDepartment = () => {
     inquirer
         .prompt([
             {
-                type: "input",
-                message: "What is the name of the department you'd like to add?",
-                name: "addDepartment"
+                type: 'input',
+                message: 'What is the name of the department you wouldd like to add?',
+                name: 'addDepartment'
             }
         ]).then(ans => {
             db.query(`INSERT INTO department(name)
@@ -118,19 +118,19 @@ const addRole = () => {
     inquirer
         .prompt([
             {
-                type: "input",
-                message: "What is the title of the role you'd like to add?",
-                name: "roleTitle"
+                type: 'input',
+                message: 'What is the title of the role you would like to add?',
+                name: 'roleTitle'
             },
             {
-                type: "input",
-                message: "What is the salary for this role?",
-                name: "roleSalary"
+                type: 'input',
+                message: 'What is the salary for this role?',
+                name: 'roleSalary'
             },
             {
-                type: "list",
-                message: "Which department is this role in?",
-                name: "addDepartment",
+                type: 'list',
+                message: 'Which department is this role in?',
+                name: 'addDepartment',
                 choices: departmentChoices
             }
         ]).then(ans => {
@@ -152,14 +152,14 @@ const addEmployee = () => {
     inquirer
         .prompt([
             {
-                type: "input",
-                message: "What is the employee's first name?",
-                name: "firstName"
+                type: 'input',
+                message: 'What is the employees first name?',
+                name: 'firstName'
             },
             {
                 type: "input",
-                message: "What is the employee's last name?",
-                name: "lastName"
+                message: 'What is the employees last name?',
+                name: 'lastName'
             },
         ]).then(ans => {
             db.query(`INSERT INTO employee(first_name, last_name)
@@ -176,3 +176,36 @@ const addEmployee = () => {
             )
         })
 };
+
+
+//------------------------------ code below was not used ---------------------------------
+
+// update an employee
+
+// const updateEmployee = () => {
+//     const employeeChoices = () => db.promise().query(`SELECT * FROM employee`)
+//         .then((rows) => {
+//             let employees = rows.map(employee => employee.first_name + ' ' + employee.last_name);
+//                 return employees;
+//             })
+//     const roleChoices = () => db.promise().query(`SELECT * FROM role`)
+//         .then((rows) => {
+//             let roles = rows.map(role => role.title) 
+//                 return roles;
+//             })
+//     inquirer
+//         .prompt([
+//             {
+//                 type: 'list',
+//                 message: 'Which employees role do you want to update?',
+//                 name: 'employee',
+//                 choices: employeeChoices
+//             },
+//             {
+//                 type: 'list',
+//                 message: 'What is the employees new role?',
+//                 name: 'role',
+//                 choices: roleChoices
+//             },
+//         ]).then(ans => {})
+//     };
