@@ -176,36 +176,3 @@ const addEmployee = () => {
             )
         })
 };
-
-
-//------------------------------ code below was not used ---------------------------------
-
-// update an employee
-
-// const updateEmployee = () => {
-//     const employeeChoices = () => db.promise().query(`SELECT * FROM employee`)
-//         .then((rows) => {
-//             let employees = rows.map(employee => employee.first_name + ' ' + employee.last_name);
-//                 return employees;
-//             })
-//     const roleChoices = () => db.promise().query(`SELECT * FROM role`)
-//         .then((rows) => {
-//             let roles = rows.map(role => role.title) 
-//                 return roles;
-//             })
-//     inquirer
-//         .prompt([
-//             {
-//                 type: 'list',
-//                 message: 'Which employees role do you want to update?',
-//                 name: 'employee',
-//                 choices: employeeChoices
-//             },
-//             {
-//                 type: 'list',
-//                 message: 'What is the employees new role?',
-//                 name: 'role',
-//                 choices: roleChoices
-//             },
-//         ]).then(ans => {})
-//     };

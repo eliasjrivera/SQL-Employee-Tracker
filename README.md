@@ -36,7 +36,7 @@ Project Repo/Screencastify
 <br>
 [Elias Rivera GitHub Repo](https://github.com/eliasjrivera/SQL-Employee-Tracker)
 <br>
-[Screencastify]()
+[Screencastify](https://drive.google.com/file/d/1RjLHbgDZKEmPNv4Odalt7Qno55rvZF46/view)
 <br>
 <br>
 Installation
